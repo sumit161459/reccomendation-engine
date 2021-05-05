@@ -1,0 +1,23 @@
+.pica {
+  width: 100px;
+  height: 100px;
+  border: 5px solid white;
+  opacity: 0.7;
+}
+.picb {
+  width: 100px;
+  height: 100px;
+  border: 5px solid yellow;
+  opacity: 1;
+}
+
+.pica:hover {
+  border: 5px solid red;
+}
+
+/* .row_posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+  } */
