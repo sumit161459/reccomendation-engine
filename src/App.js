@@ -10,24 +10,28 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [refmovies,setRefMovies]=useState([]);
   const [disable,setDisable]=useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       const Request = await axios.get(request.fetchNetflixOriginals);
       setMovies(Request.data.results);
+      setLoading(false);
       return Request;
     }
     fetchData();
-  }, []);
-  console.log(movies);
+  }, [refmovies]);
+  // console.log(movies);
+  console.log(refmovies)
+
   return (
     <div className="App">
       <h1>Welcome</h1>
       <h2>Please choose any 5 or more movies</h2>
       <div className="aa" >
-        <Pictures movies={movies} refmovies={refmovies} setRefMovies={setRefMovies} disable={disable} setDisable={setDisable}/>
+        <Pictures setDisable={setDisable} loading={loading} movies={movies} refmovies={refmovies} setRefMovies={setRefMovies} disable={disable}/>
       </div>
-      <Button disable={disable}></Button>
+      <Button disable={disable} count={refmovies.length}></Button>
     </div>
   )
 }
