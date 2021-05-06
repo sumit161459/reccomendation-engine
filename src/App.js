@@ -15,12 +15,12 @@ function App() {
       return Request;
     }
     fetchData();
-  }, [request.fetchNetflixOriginals]);
+  }, []);
   console.log(movies);
   return (
     <div className="App">
       <h1>Welcome</h1>
-      <h2>please choose any 5 or more movies from list</h2>
+      <h2>Please choose any 5 or more movies</h2>
       <div className="aa" >
         <Pictures movies={movies}/>
       </div>
