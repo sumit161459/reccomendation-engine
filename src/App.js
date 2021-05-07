@@ -11,6 +11,7 @@ function App() {
   const [refmovies,setRefMovies]=useState([]);
   const [disable,setDisable]=useState(true);
   const [loading, setLoading] = useState(true);
+  const [count,setCount]=useState(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -29,9 +30,9 @@ function App() {
       <h1>Welcome</h1>
       <h2>Please choose any 5 or more movies</h2>
       <div className="aa" >
-        <Pictures setDisable={setDisable} loading={loading} movies={movies} refmovies={refmovies} setRefMovies={setRefMovies} disable={disable}/>
+        <Pictures setDisable={setDisable} loading={loading} movies={movies} refmovies={refmovies} setRefMovies={setRefMovies} disable={disable} setCount={setCount}/>
       </div>
-      <Button disable={disable} count={refmovies.length}></Button>
+      <Button disable={disable} count={count}></Button>
     </div>
   )
 }

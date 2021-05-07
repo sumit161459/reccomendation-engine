@@ -7,7 +7,8 @@ function Picture({
   movie,
   refmovies,
   setRefMovies,
-  setDisable
+  setDisable,
+  setCount
 }) {
   // useEffect(() => {
   //   console.log("useeffect")
@@ -26,11 +27,12 @@ function Picture({
     if (refmovies.includes(movie.id)) {
       const index = refmovies.indexOf(movie.id);
       refmovies.splice(index, 1);
-      setRefMovies(refmovies);
     } else {
       refmovies.push(movie.id);
-      setRefMovies(refmovies);
     }
+    setRefMovies(refmovies);
+    setCount(refmovies.length);
+
     if (refmovies.length >= 5) {
       setDisable(false);
     } else {

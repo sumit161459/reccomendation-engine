@@ -8,7 +8,7 @@ function Button({ disable, count }) {
         disabled={disable}
         onClick={() => alert("working")}
       >
-        Recommend
+        Recommend-{count}
       </button>
     </div>
   );

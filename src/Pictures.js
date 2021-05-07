@@ -11,6 +11,7 @@ function Pictures({
   setRefMovies,
   disable,
   setDisable,
+  setCount
 }) {
   return (
     <>
@@ -34,6 +35,7 @@ function Pictures({
               setRefMovies={setRefMovies}
               disable={disable}
               setDisable={setDisable}
+              setCount={setCount}
             />
           ))}
         </div>
