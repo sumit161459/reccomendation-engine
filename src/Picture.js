@@ -24,16 +24,16 @@ function Picture({
 
   const [select, setSelect] = useState(false);
   const onClickHandler = (key) => {
-    if (refmovies.includes(movie.id)) {
-      const index = refmovies.indexOf(movie.id);
-      refmovies.splice(index, 1);
+    let newrefmovies=[...refmovies]
+    if (newrefmovies.includes(movie.id)) {
+      const index = newrefmovies.indexOf(movie.id);
+      newrefmovies.splice(index, 1);
     } else {
-      refmovies.push(movie.id);
+      newrefmovies=[...refmovies,movie.id]
     }
-    setRefMovies(refmovies);
-    setCount(refmovies.length);
+    setRefMovies(newrefmovies);
 
-    if (refmovies.length >= 5) {
+    if (newrefmovies.length >= 5) {
       setDisable(false);
     } else {
       setDisable(true);
